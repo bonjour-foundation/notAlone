@@ -1,0 +1,9 @@
+<ion-button shape="round" size="large" type="submit" color="light" (click)="share()" class="big">
+  <ion-label>{{ 'SHARE_CIRCLE.INVITE' | translate }}</ion-label>
+</ion-button>
+
+<web-social-share [show]="pwaShareShow" [share]="pwaShareOptions" (closed)="pwaShareClose()">
+    <ion-icon name="mail" slot="email" style="font-size: 2rem; color: var(--ion-color-medium); display: block;" ariaLabel="{{ 'SHARE_CIRCLE.EMAIL' | translate }}"></ion-icon>
+    <ion-icon name="logo-whatsapp" slot="whatsapp" style="font-size: 2rem; color: #25D366; display: block;" ariaLabel="{{ 'SHARE_CIRCLE.WHATSAPP' | translate }}"></ion-icon>
+    <ion-icon name="copy" slot="copy" style="font-size: 2rem; color: var(--ion-color-quinary); display: block;" ariaLabel="{{ 'SHARE_CIRCLE.COPY' | translate }}"></ion-icon>
+</web-social-share>

@@ -1,0 +1,7 @@
+{
+  "name": "circle",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

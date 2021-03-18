@@ -1,0 +1,227 @@
+{
+  "CORE": {
+    "NEXT": "Weiter",
+    "SAVE": "Speichern",
+    "OK": "Ok",
+    "CANCEL": "Abbrechen",
+    "BACK": "Zurück"
+  },
+  "INTRO": {
+    "SKIP_INTRO": "Skip Intro",
+    "SLIDES": {
+      "BONJOUR": {
+        "TITLE": "NotAlone",
+        "TEXT": "Willkommen bei <strong>NotAlone</strong>, der App, die Sie nicht alleine lässt."
+      },
+      "HELP": {
+        "TITLE": "Hilfe",
+        "TEXT": "Personen, die alleine sind, können per Knopfdruck Unterstützung anfordern.",
+        "INFO": "Ich benötige jemanden, der für mich einkaufen geht."
+      },
+      "TEAM":{
+        "TITLE": "Team",
+        "TEXT": "Dazu bilden Sie ein Unterstützungsteam: drei Angehörige, Freunde oder Menschen aus der Nachbarschaft."
+      },
+      "INQUIRY": {
+        "TITLE": "Täglicher Draht",
+        "TEXT": "Die <strong>NotAlone</strong> App fragt die Person täglich wie es ihr geht.",
+        "INFO": "Bonjour!<br/>Wie fühlen Sie sich heute?"
+      },
+      "INFORMATION": {
+        "TITLE": "Information",
+        "TEXT": "Das Team wird umgehend informiert. Das tägliche Lebenszeichen hilft dem Team, sich keine unnötigen Sorgen zu machen.",
+        "INFO": "Peter geht es gut."
+      },
+      "ORGANIZATION": {
+        "TITLE": "Organisation",
+        "TEXT": "Kümmert sich ein Team-Mitglied um den Wunsch, drückt es “Ich mach’s”",
+        "INFO": "Tim machts."
+      },
+      "LOS_GEHTS": {
+        "TITLE": "Los geht's!",
+        "INFO": "Viel Freude beim füreinander da sein!"
+      }
+    }
+  },
+  "EDIT_USER": {
+    "TITLE_ADD": "Meine Daten:",
+    "EMAIL": "E-Mail:",
+    "PASSWORD": "Passwort:",
+    "CONFIRM_PASSWORD": "Passwort bestätigen:",
+    "FIRST_NAME": "Vorname:",
+    "NAME": "Nachname:",
+    "PHONE": "Telefon:",
+    "SHARE_CODE": "Code eingeben:",
+    "PLACEHOLDER_FIRST_NAME": "Hans",
+    "PLACEHOLDER_NAME": "Muster",
+    "PLACEHOLDER_PHONE": "+41 79 123 45 67",
+    "PLACEHOLDER_SHARE_CODE": "Der Code steht in der Einladung",
+    "TERMS_ACCEPT": "Indem Sie beitreten, akzeptieren Sie die NotAlone AGB",
+    "TERMS_READ": " AGB lesen"
+  },
+  "EDIT_EMERGENCY": {
+    "FUNCTION": "Funktion / Institution:",
+    "PLACEHOLDER_FUNCTION": "Nachbar",
+    "TEXT": "Hier können Sie die Nummer einer Person speichern, die einen Schlüssel / Zugang hat.",
+    "EXAMPLE": "Diese Person ist nicht im Kreis und wird nicht informiert, wie es Ihnen geht. Zum Beispiel Nachbarin, Spitex, Siedlungsleitung.",
+    "NAME": "Name / Institution"
+  },
+  "CREATE_CIRCLE": {
+    "TITLE": "In drei Schritten zum Ziel:",
+    "STEPS": {
+      "ONE": "Meine Daten",
+      "TWO": "Meine Kontaktperson",
+      "THREE": "Mein Team"
+    },
+    "NOTIFICATIONS": "Damit die Organisation funktioniert, müssen alle Beteiligten <strong>Benachrichtigungen erlauben</strong>.",
+    "ME": "Mein Team aufsetzen",
+    "INVITED_TEXT": "Ich bin in ein Team",
+    "INVITED_STRONG": "eingeladen worden"
+  },
+  "SHARE_CIRCLE": {
+    "TITLE": "Mein Team:",
+    "CODE": "Team Code:",
+    "INVITE_PARAGRAPH_A": "Laden Sie maximal drei Personen ein, die Ihnen helfen wollen.",
+    "INVITE_PARAGRAPH_B": "Danach drücken Sie fertig.",
+    "INVITE_PARAGRAPH_CODE": "Mit diesem Code können Sie Personen Zutritt zu ihrem Team geben.",
+    "READY": "Sobald die eingeladenen Personen die Einladung bestätigt haben, kann es losgehen.",
+    "INVITE": "Einladung senden",
+    "DONE": "Fertig",
+    "EMAIL": "Email",
+    "WHATSAPP": "WhatsApp",
+    "COPY": "Kopieren",
+    "CONTENT": {
+      "TITLE": "Einladung NotAlone App",
+      "TEXT_WITHOUT_URL": "Bonjour! Ich lade Sie / Dich herzlich ein, meinem NotAlone-Team beizutreten. Hier geht es zur App:",
+      "TEXT_WITH_URL": "Bonjour! Ich lade Sie / Dich herzlich ein, meinem NotAlone-Team beizutreten. Hier geht es zur App: {{url}}"
+    }
+  },
+  "SMILEY": {
+    "QUESTION": "Wie fühlen Sie sich heute?",
+    "TIPS": {
+      "STATE": {
+        "START": "Tippen Sie",
+        "MARK": "mehrmals",
+        "END": "auf den Smiley um Ihre Stimmung einzugeben"
+      },
+      "CREATE_CIRCLE": "Tippen Sie auf den äusseren Kreis, um Ihr Team aufzusetzen",
+      "EDIT_CIRCLE": "Tippen Sie auf den äusseren Kreis, um Ihre Daten zu bearbeiten oder zu sehen wer zum Team gehört."
+    },
+    "STATE": {
+      "SUPER": "sehr gut",
+      "WELL": "gut",
+      "OKAY": "soso lala",
+      "NOT_WELL": "nicht so gut",
+      "BAD": "nicht gut"
+    },
+    "EMERGENCY": "{{who}} meldet sich nicht",
+    "EMERGENCY_CHECKED": "{{who}} hat sich nicht gemeldet",
+    "NEXT": {
+      "TEXT": "Nächste Nachfrage {{at}}.",
+      "LINK": "Ändern"
+    }
+  },
+  "MENU": {
+    "HOME": "Home",
+    "EDIT_CIRCLE": "Team",
+    "SCHEDULE": "Nachfrage",
+    "ACCOUNT": "Mein Konto",
+    "INFORMATION": "Hilfe / About",
+    "PRIVACY": "Datenschutz",
+    "ABOUT_BONJOUR": "Über Bonjour"
+  },
+  "HOME": {
+    "SAVE_STATE": "Stimmung speichern",
+    "INFORM_CIRCLE": "Team informieren",
+    "CIRCLE_INFORMED": "Vielen Dank, Ihr Team wurde informiert",
+    "CIRCLE_INFORMED_EMTPY": "Es ist noch niemand Ihrem Team beigetreten.",
+    "I_WILL_DO_IT": "Ich kümmere mich darum",
+    "WHO_WILL_DO_IT": "{{who}} kümmert sich drum"
+  },
+  "REQUEST": {
+    "PHONE_CALL": "Ich würde mich über einen Anruf freuen",
+    "HELP": "Ich benötige eine helfende Hand",
+    "VISIT": "Ich benötige jemanden, der für mich einkaufen geht",
+    "GOOD": "Ich komme heute zurecht"
+  },
+  "EDIT_CIRCLE": {
+    "NO_ONE_INVITED": "Drücken Sie « Einladung senden », um eine weitere Person einzuladen. Der Code wird mitgeschickt."
+  },
+  "ERROR": {
+    "INIT": "Ups! Beim Aufstarten ist etwas schief gelaufen. Bitte versuchen Sie es später noch einmal.",
+    "SHARE": "Hmm. Leider konnte der Link nicht geteilt werden.",
+    "CREATE_UPDATE_USER": "Hmm. Leider konnte die Person nicht erstellt/aktualisiert werden. ",
+    "CREATE_UPDATE_EMERGENCY": "Hmm. Leider konnte die Kontaktperson nicht erstellt/aktualisiert werden.",
+    "CONNECTED_USERS": "Hmm. Leider ist etwas schief gelaufen beim Laden der Personen.",
+    "TODAY_STATE": "Hmm. Leider konnte die heutige Stimmung nicht geladen werden.",
+    "REMINDER": "Hmm. Es ist etwas schief gelaufen beim Speichern der Nachfrage.",
+    "AUTH": {
+      "EMAIL_ALREADY_IN_USE": "Hoppla! Diese Email existiert bereits.",
+      "USER_NOT_FOUND": "Hmm. Dieser Benutzer konnte nicht gefunden werden.",
+      "WRONG_PASSWORD": "Ups! Passwort falsch.",
+      "ERROR": "Ups! Bei der Anmeldung ist etwas schief gelaufen.",
+      "RESET": "Hmm. Leider konnte das Passwort nicht zurückgesetzt werden.",
+      "LOGOUT": "Leider hat die Abmeldung nicht funktioniert. Hmm.",
+      "DELETE": "Ups! Beim Löschen des Kontos ist etwas schief gelaufen.",
+      "REQUIRES_RECENT_LOGIN": "Um diesen Vorgang auszuführen: Abmelden, Anmelden (Menü: Konto), erneut versuchen. Danke."
+    }
+  },
+  "EMERGENCY": {
+    "TITLE": "Möchten Sie jemanden anrufen?",
+    "PHONE_NUMBER_CIRCLE": "Team",
+    "EMERGENCY_NUMBER_CIRCLE": "Kontaktperson"
+  },
+  "CREATE_EMERGENCY": {
+    "TITLE": "Schlüssel:",
+    "INVITE_LATER": "Weiter"
+  },
+  "DONE": {
+    "CENTER": {
+      "TITLE": "Bravo!",
+      "TEXT": "Sobald jemand Ihrem Team beitritt, werden Sie informiert.",
+      "INFO": {
+        "PART_1": "Sie können jederzeit im Menü unter „Team“ (",
+        "PART_2": ") nachschauen, wer beigetreten ist, die Daten bearbeiten oder Personen einladen."
+      }
+    },
+    "CONNECTION": {
+      "TITLE": "Willkommen!",
+      "TEXT": "Sie sind nun Teil vom Team von {{who}}."
+    }
+  },
+  "SCHEDULE": {
+    "NEXT_DAY": "Nächste Nachfrage",
+    "NEXT_TIME": "Zeitpunkt der Nachfrage",
+    "MONTHS": "Januar,Februar,März,April,Mai,Juni,Juli,August,September,Oktober,November,Dezember"
+  },
+  "ACCOUNT": {
+    "SIGNED_IN_WITH": "Angemeldet mit <strong>{{email}}</strong>",
+    "SIGN_OUT": {
+      "BUTTON": "Abmelden",
+      "QUESTION": "Bitte bestätigen Sie, dass Sie sich abmelden wollen.",
+      "ANSWER": "Abmelden"
+    },
+    "DELETE_ACCOUNT": {
+      "BUTTON": "Konto löschen",
+      "QUESTION": "Wenn Sie « Löschen » drücken, werden Ihr Konto und all Ihre Daten unumkehrbar gelöscht.",
+      "ANSWER": "Löschen"
+    }
+  },
+  "SIGN_IN": {
+    "TITLE": "Anmeldung:",
+    "METHOD": {
+      "GOOGLE": "Mit Google anmelden",
+      "EMAIL": "Mit E-Mail anmelden"
+    }
+  },
+  "CREATE_EMAIL": {
+    "TITLE": "Meine Zugangsdaten:",
+    "SIGN_IN": "Ich habe bereits ein Konto",
+    "CREATE": "Ich habe noch kein Konto",
+    "PASSWORD": "Ich habe mein Passwort vergessen"
+  },
+  "RESET_PASSWORD": {
+    "TITLE": "Neues Passwort anfordern:",
+    "EMAIL_SENT": "Sie werden in Kürze eine Email erhalten, um Ihr Passwort zurück zu setzen."
+  }
+}

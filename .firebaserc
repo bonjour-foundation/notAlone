@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "bonjour-notalone",
+    "dev": "bonjour-notalone-dev"
+  }
+}

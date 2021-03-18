@@ -1,0 +1,14 @@
+p.share-id {
+  padding: 16px;
+  background: var(--ion-color-light);
+
+  font-size: var(--heading-big-font-size);
+  line-height: var(--heading-big-line-height);
+
+  border-radius: 8px;
+
+  min-height: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

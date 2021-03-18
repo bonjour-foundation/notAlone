@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="background">
+    <ion-buttons slot="start" *ngIf="!signInProcessing">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+    <ng-container *ngIf="!signInProcessing; else loading;">
+      <main>
+        <app-circle [small]="true" [highlightCenter]="centerUser" [highlightTop]="!centerUser" [highlightRight]="!centerUser" [highlightLeft]="!centerUser"></app-circle>
+
+          <section class="ion-padding ion-text-center sign-in-actions">
+
+            <h2 class="ion-text-center ion-padding ion-no-margin">{{ 'SIGN_IN.TITLE' | translate }}</h2>
+
+            <ion-button shape="round" size="large" color="light" (click)="googleLogin()">
+              <ion-icon src="assets/img/signin/google.svg" slot="start"></ion-icon>
+              <ion-label>{{ 'SIGN_IN.METHOD.GOOGLE' | translate }}</ion-label>
+            </ion-button>
+
+            <ion-button shape="round" size="large" color="light" (click)="emailLogin()" class="ion-margin-top">
+              <ion-icon name="mail" slot="start"></ion-icon>
+              <ion-label>{{ 'SIGN_IN.METHOD.EMAIL' | translate }}</ion-label>
+            </ion-button>
+          </section>
+
+          <a (click)="navigateTerms()">
+            <p class="terms ion-padding-start ion-padding-end">
+              <ion-label class="ion-text-center">{{ 'EDIT_USER.TERMS_ACCEPT' | translate }}</ion-label>
+
+              <ion-label class="ion-text-center ion-padding">{{ 'EDIT_USER.TERMS_READ' | translate }}</ion-label>
+            </p>
+          </a>
+      </main>
+    </ng-container>
+
+    <ng-template #loading>
+      <div class="smiley-container">
+        <ion-spinner color="dark"></ion-spinner>
+      </div>
+    </ng-template>
+
+</ion-content>

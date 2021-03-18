@@ -1,0 +1,27 @@
+// http://ionicframework.com/docs/theming/
+@import "~@ionic/angular/css/core.css";
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+// Bonjour - Circle
+@import "./theme/fonts";
+@import "./theme/media-queries";
+
+@import "./theme/content";
+@import "./theme/header";
+@import "./theme/footer";
+@import "./theme/list";
+@import "./theme/button";
+@import "./theme/heading";
+@import "./theme/loading";
+@import "./theme/anchor";
+@import "./theme/datetime";
+@import "./theme/action-sheet";

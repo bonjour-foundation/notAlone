@@ -1,0 +1,27 @@
+div.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  ion-icon {
+    color: transparent;
+    font-size: 4rem;
+  }
+}
+
+ion-list {
+  height: 100%;
+
+  ion-item {
+    ion-icon {
+      padding-top: 32px;
+      font-size: var(--heading-small-font-size);
+    }
+  }
+}
+
+div.actions {
+  margin-bottom: 16px;
+  align-self: flex-end;
+}

@@ -1,0 +1,35 @@
+ion-content {
+  --background: var(--ion-color-background);
+
+  &[padding] {
+    --padding-top: 0;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    display: grid;
+    height: 100%;
+
+    @media screen and (min-width: 540px) {
+      grid-template-columns: minmax(500px, 0.5fr);
+    }
+
+    > ion-spinner {
+      align-self: center;
+      justify-self: center;
+      margin-bottom: 44px;
+    }
+
+    @include ipad {
+      height: inherit;
+      min-height: 640px;
+      align-items: center;
+
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

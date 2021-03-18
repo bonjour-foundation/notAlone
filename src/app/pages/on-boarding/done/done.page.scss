@@ -1,0 +1,29 @@
+main {
+  grid-template-rows: auto;
+}
+
+ion-icon.done-smiley {
+  color: transparent;
+  font-size: 15rem;
+  justify-self: center;
+}
+
+div.done-info {
+  font-size: var(--lead-font-size);
+  line-height: var(--lead-line-height);
+  font-weight: var(--lead-font-weight);
+
+  padding: 16px;
+
+  background-color: white;
+  border-radius: 8px;
+
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+
+  height: fit-content;
+
+  ion-icon {
+    vertical-align: middle;
+    color: var(--ion-color-medium);
+  }
+}

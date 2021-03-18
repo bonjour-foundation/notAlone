@@ -1,0 +1,44 @@
+<form (ngSubmit)="createOrUpdate()" [formGroup]="userForm">
+
+  <h2 class="ion-text-center ion-padding-start ion-padding-end ion-no-margin">{{ 'EDIT_USER.TITLE_ADD' | translate }}</h2>
+
+  <ion-list class="ion-padding-start ion-padding-end">
+    <ion-item>
+      <ion-label position="floating">{{ 'EDIT_USER.EMAIL' | translate }}</ion-label>
+      <ion-input #email required [value]="user?.data?.email" formControlName="email" type="email"></ion-input>
+      <a (click)="focusEmail()" slot="end"><ion-icon src="assets/img/pencil.svg" ariaLabel="{{ 'EDIT_USER.EMAIL' | translate }}"></ion-icon></a>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">{{ 'EDIT_USER.FIRST_NAME' | translate }}</ion-label>
+      <ion-input #firstName required [value]="user?.data?.first_name" formControlName="first_name" type="text"></ion-input>
+      <a (click)="focusFirstName()" slot="end"><ion-icon src="assets/img/pencil.svg" ariaLabel="{{ 'EDIT_USER.FIRST_NAME' | translate }}"></ion-icon></a>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">{{ 'EDIT_USER.NAME' | translate }}</ion-label>
+      <ion-input #lastName required [value]="user?.data?.last_name" formControlName="last_name" type="text"></ion-input>
+      <a (click)="focusLastName()" slot="end"><ion-icon src="assets/img/pencil.svg" ariaLabel="{{ 'EDIT_USER.NAME' | translate }}"></ion-icon></a>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">{{ 'EDIT_USER.PHONE' | translate }}</ion-label>
+      <ion-input #phoneNumber required [value]="user?.data?.phone_number" formControlName="phone_number" type="tel"></ion-input>
+      <a (click)="focusPhoneNumber()" slot="end"><ion-icon src="assets/img/pencil.svg" ariaLabel="{{ 'EDIT_USER.PHONE' | translate }}"></ion-icon></a>
+    </ion-item>
+
+    <ion-item *ngIf="!centerUser">
+      <ion-label position="floating">{{ 'EDIT_USER.SHARE_CODE' | translate }}</ion-label>
+      <ion-input #hashId required [value]="share?.data?.hash_id" formControlName="hash_id" type="text"
+                  debounce="500" (ionChange)="updateShare()"></ion-input>
+      <a (click)="focusHashId()" slot="end"><ion-icon src="assets/img/pencil.svg" ariaLabel="{{ 'EDIT_USER.SHARE_CODE' | translate }}"></ion-icon></a>
+    </ion-item>
+  </ion-list>
+
+  <div class="actions ion-padding-start ion-padding-end ion-padding-bottom ion-text-center">
+    <ion-button shape="round" size="large" type="submit" [disabled]="!userForm.valid || (!centerUser && !circleReachable)" color="light">
+      <ion-label>{{ 'CORE.NEXT' | translate }}</ion-label>
+    </ion-button>
+  </div>
+
+</form>

@@ -1,0 +1,85 @@
+<ion-header>
+    <ion-toolbar appToolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+
+        <ion-title></ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" scrollY="false">
+
+    <app-tips></app-tips>
+
+    <main class="ion-padding-start ion-padding-end">
+        <ng-container *ngIf="(sessionUser && centerUser) || (sessionInitialized && !sessionUser); else displayLoading;">
+            <div class="smiley-component-container" *ngIf="circleLoaded; else displayLoading;">
+                <app-smiley [isCenterUser]="isCenterUser()"
+                            [displayState]="centerState?.data" [emergency]="emergency"
+                            [centerUser]="centerUser"
+                            [circleReminder]="circle?.data?.reminder"
+                            (requestType)="onRequestTypeChange($event)" (updateReminder)="navigateReminder()"
+                            (createCircle)="navigateCreateCircle()" (editCircle)="navigateEditCircle()"
+                            (state)="onStateChange($event)"></app-smiley>
+            </div>
+
+            <div class="actions" [class.visible]="showAction && !tipsHideAction">
+                <ion-button *ngIf="!sessionUser" shape="round" size="large" type="submit" color="light" (click)="displayOrNavigateCreateCircle()">
+                    <ion-label>{{ 'HOME.SAVE_STATE' | translate }}</ion-label>
+                </ion-button>
+
+                <ng-container *ngIf="centerUser && sessionUser">
+                    <ng-container *ngIf="isCenterUser()">
+                        <ion-button *ngIf="!displayCircleInformed" shape="round" size="large" type="submit" color="light" (click)="createTodayState()">
+                            <ion-label>{{ 'HOME.INFORM_CIRCLE' | translate }}</ion-label>
+                        </ion-button>
+
+                        <ion-label *ngIf="displayCircleInformed" class="ion-text-center circle-informed ion-text-wrap">{{ (hasCircleConnections() ? 'HOME.CIRCLE_INFORMED' : 'HOME.CIRCLE_INFORMED_EMTPY') | translate }}</ion-label>
+                    </ng-container>
+
+                    <ng-container *ngIf="!isCenterUser()">
+
+                        <ng-container *ngIf="!emergency">
+                            <ng-container *ngIf="centerState && centerState.data && centerState.data.request">
+                                <ion-button *ngIf="isRequestDealable()" shape="round" size="large" type="submit" color="light" (click)="dealWithState()">
+                                    <ion-label>{{ 'HOME.I_WILL_DO_IT' | translate }}</ion-label>
+                                </ion-button>
+
+                                <ng-container *ngIf="centerState.data.request.deal_with">
+                                    <div class="who-will-do-it">
+                                        <ion-icon name="checkmark-circle"></ion-icon>
+                                        <ion-label>{{ 'HOME.WHO_WILL_DO_IT' | translate:{who: centerState.data.request.deal_with.first_name} }}</ion-label>
+                                    </div>
+                                </ng-container>
+                            </ng-container>
+                        </ng-container>
+
+                        <ng-container *ngIf="emergency">
+                            <ng-container *ngIf="centerState && centerState.data && centerState.data.emergency && isTodayState()">
+                                <div class="who-will-do-it">
+                                    <ion-icon name="checkmark-circle"></ion-icon>
+                                    <ion-label>{{ 'HOME.WHO_WILL_DO_IT' | translate:{who: centerState.data.emergency.deal_with.first_name} }}</ion-label>
+                                </div>
+                            </ng-container>
+
+                            <ng-container *ngIf="!centerState || !centerState.data || !centerState.data.emergency || !isTodayState()">
+                                <ion-button shape="round" size="large" type="submit" color="light" (click)="dealWithEmergency()">
+                                    <ion-label>{{ 'HOME.I_WILL_DO_IT' | translate }}</ion-label>
+                                </ion-button>
+                            </ng-container>
+                        </ng-container>
+
+                    </ng-container>
+
+                </ng-container>
+            </div>
+        </ng-container>
+
+        <ng-template #displayLoading>
+            <app-smiley [loading]="true"></app-smiley>
+        </ng-template>
+    </main>
+
+    <app-background-circle *ngIf="(sessionUser && centerUser) || (sessionInitialized && !sessionUser);"></app-background-circle>
+</ion-content>

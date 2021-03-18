@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 51 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Layer_2">
+        <g id="Layer_1-2">
+            <g id="Group_6403">
+                <circle id="Ellipse_1756" cx="25.5" cy="25.5" r="25.5" style="fill:rgb(255,195,28);"/>
+            </g>
+            <path d="M38.27,34.84L36.27,18.53C36.102,17.695 35.33,17.108 34.48,17.17L31.93,17.17L31.93,15.85C31.93,12.37 29.07,9.505 25.59,9.5C22.109,9.505 19.245,12.369 19.24,15.85L19.24,17.17L16.77,17.17C15.93,17.127 15.175,17.707 15,18.53L13,34.84C12.71,37.21 14.93,39.27 17.76,39.27L33.5,39.27C36.34,39.27 38.55,37.21 38.27,34.84ZM22.27,15.84C22.27,14.002 23.782,12.49 25.62,12.49C27.458,12.49 28.97,14.002 28.97,15.84L28.97,17.16L22.27,17.16L22.27,15.84Z" style="fill:white;fill-rule:nonzero;"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,44 @@
+main {
+  grid-template-rows: auto;
+}
+
+ol {
+  padding-left: 0;
+  list-style-position: inside;
+
+  font-weight: var(--heading-big-font-weight);
+
+  > li > * {
+    font-weight: var(--lead-font-weight);
+  }
+
+  font-size: var(--lead-font-size);
+  line-height: var(--lead-line-height);
+}
+
+p.invited {
+  margin-top: 32px;
+
+  padding-left: 32px;
+  padding-right: 32px;
+
+  font-size: var(--text-font-size);
+  font-weight: var(--text-font-weight);
+  line-height: var(--text-line-height);
+
+  strong {
+    font-weight: inherit;
+    border-bottom: 1px solid black;
+  }
+}
+
+ion-button {
+  &.share-circle {
+    font-size: var(--status-font-size);
+  }
+}
+
+ion-label.notifications {
+  font-size: var(--lead-font-size);
+  line-height: var(--lead-line-height);
+}

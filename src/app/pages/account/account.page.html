@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="background">
+    <ion-buttons slot="start">
+      <ion-menu-button [disabled]="actionInProgress"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <main>
+    <div class="title">
+      <ion-icon src="assets/img/menu/account.svg" ariaLabel="{{ 'MENU.ACCOUNT' | translate }}"></ion-icon>
+      <h2>{{ 'MENU.ACCOUNT' | translate }}</h2>
+    </div>
+
+    <div class="ion-text-center">
+      <p class="ion-margin-top ion-margin-bottom" [innerHTML]="'ACCOUNT.SIGNED_IN_WITH' | translate: {email: sessionUser?.data?.email}"></p>
+
+      <ion-spinner [class.show]="actionInProgress" color="dark"></ion-spinner>
+    </div>
+
+    <div class="actions-logout-delete ion-padding-top ion-padding-start ion-padding-end">
+      <ion-button shape="round" size="large" type="submit" color="light" (click)="showSignOutActionSheet()" [disabled]="actionInProgress">
+        <ion-label>{{ 'ACCOUNT.SIGN_OUT.BUTTON' | translate }}</ion-label>
+      </ion-button>
+
+      <ion-button shape="round" size="large" type="submit" color="light" class="ion-margin-top ion-margin-bottom border-quaternary" (click)="showDeleteActionSheet()" [disabled]="actionInProgress">
+        <ion-label>{{ 'ACCOUNT.DELETE_ACCOUNT.BUTTON' | translate }}</ion-label>
+      </ion-button>
+
+    </div>
+  </main>
+
+</ion-content>

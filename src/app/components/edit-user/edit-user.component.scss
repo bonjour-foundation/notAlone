@@ -1,0 +1,19 @@
+form {
+  display: grid;
+  height: 100%;
+  grid-template-rows: 80% 20%;
+
+  ion-item {
+    ion-icon {
+      padding-top: 32px;
+      font-size: var(--heading-small-font-size);
+    }
+  }
+
+  @media screen and (min-width: 720px) {
+    div.actions {
+      margin-bottom: 16px;
+    }
+  }
+}
+

@@ -1,0 +1,13 @@
+<h2 class="ion-text-center ion-padding-start ion-padding-end ion-no-margin">{{ 'SHARE_CIRCLE.CODE' | translate }}</h2>
+
+<div class="ion-text-center ion-margin-bottom">
+    <p class="share-id ion-margin-top ion-margin-bottom">
+        <span *ngIf="shareId; else shareIdLoading">{{shareId}}</span>
+    </p>
+
+    <p>{{ 'SHARE_CIRCLE.INVITE_PARAGRAPH_CODE' | translate }}</p>
+</div>
+
+<ng-content></ng-content>
+
+<ng-template #shareIdLoading><ion-spinner color="dark"></ion-spinner></ng-template>

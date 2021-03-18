@@ -1,0 +1,36 @@
+article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  ion-list {
+    ion-item {
+      --inner-padding-end: 0;
+    }
+  }
+}
+
+h2 {
+  margin: 0;
+}
+
+ion-item-divider, ion-item {
+  --background: transparent;
+  --ion-item-border-color: transparent;
+
+  ion-label, ion-button {
+    width: 100%;
+  }
+
+  ion-icon {
+    color: transparent;
+  }
+}
+
+ion-item-divider {
+  ion-label {
+    color: var(--ion-color-medium);
+    font-size: var(--text-font-size);
+  }
+}

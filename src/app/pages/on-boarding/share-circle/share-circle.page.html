@@ -1,0 +1,31 @@
+<ion-content class="ion-padding">
+
+    <main>
+        <app-circle [small]="true" [highlightLeft]="true" [highlightRight]="true" [highlightTop]="true" [highlightCenter]="true"></app-circle>
+
+        <div class="content">
+            <div class="ion-margin-top ion-padding-top">
+                <h2 class="ion-text-center ion-padding-start ion-padding-end ion-no-margin ion-padding-top">{{ 'SHARE_CIRCLE.TITLE' | translate }}</h2>
+
+                <div class="ion-text-center">
+                    <p>{{ 'SHARE_CIRCLE.INVITE_PARAGRAPH_A' | translate }}</p>
+
+                    <p>{{ 'SHARE_CIRCLE.INVITE_PARAGRAPH_B' | translate }}</p>
+                </div>
+            </div>
+
+            <div>
+                <div class="ion-padding-start ion-padding-end ion-text-center">
+                    <app-share (createShare)="createShare()"></app-share>
+                </div>
+
+                <div class="ion-padding ion-text-center done">
+                    <ion-button shape="round" size="large" type="submit" color="light" (click)="navigate()" class="big">
+                        <ion-label>{{ 'SHARE_CIRCLE.DONE' | translate }}</ion-label>
+                    </ion-button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</ion-content>

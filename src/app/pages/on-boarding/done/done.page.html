@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="background">
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ng-container *ngIf="circleCenter; else circleNotLoaded;">
+
+    <ng-container *ngIf="!centerUser; else displayCenterUser">
+      <main>
+        <h1 class="ion-text-center ion-no-margin ion-padding-start ion-padding-end">{{ 'DONE.CONNECTION.TITLE' | translate }}</h1>
+
+        <ion-icon class="done-smiley" [src]="'assets/img/smiley/super.svg'" ariaLabel="{{ 'SMILEY.STATE.SUPER' | translate }}"></ion-icon>
+
+        <h2 class="ion-text-center">{{ 'DONE.CONNECTION.TEXT' | translate:{who: circleCenter.first_name} }}</h2>
+
+        <div class="ion-padding ion-text-center">
+          <ion-button shape="round" size="large" type="submit" color="light" (click)="navigate()">
+            <ion-label>{{ 'CORE.NEXT' | translate }}</ion-label>
+          </ion-button>
+        </div>
+      </main>
+    </ng-container>
+
+  </ng-container>
+
+  <ng-template #displayCenterUser>
+    <main>
+      <h1 class="ion-text-center ion-no-margin ion-padding-start ion-padding-end">{{ 'DONE.CENTER.TITLE' | translate }}</h1>
+
+      <p class="ion-no-margin ion-text-center">{{ 'DONE.CENTER.TEXT' | translate }}</p>
+
+      <ion-icon class="done-smiley" [src]="'assets/img/smiley/super.svg'" ariaLabel="{{ 'SMILEY.STATE.SUPER' | translate }}"></ion-icon>
+
+      <div class="done-info ion-text-center">
+        <span>{{ 'DONE.CENTER.INFO.PART_1' | translate }}</span><ion-icon name="menu"></ion-icon><span>{{ 'DONE.CENTER.INFO.PART_2' | translate }}</span>
+      </div>
+
+      <div class="ion-padding ion-text-center">
+        <ion-button shape="round" size="large" type="submit" color="light" (click)="navigate()">
+          <ion-label>{{ 'CORE.NEXT' | translate }}</ion-label>
+        </ion-button>
+      </div>
+    </main>
+  </ng-template>
+
+  <ng-template #circleNotLoaded>
+    <main>
+      <ion-spinner color="primary"></ion-spinner>
+    </main>
+  </ng-template>
+
+</ion-content>

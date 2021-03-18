@@ -1,0 +1,193 @@
+deckgo-deck {
+  --pager-display: none;
+
+}
+
+deckgo-slide-title {
+
+  --slide-padding-top: 0px;
+  --slide-padding-bottom: 0px;
+  --slide-padding-start: 0px;
+  --slide-padding-end: 0px;
+
+  overflow: hidden;
+
+  img {
+    max-height: inherit;
+  }
+
+  ion-toolbar {
+    --ion-toolbar-background: transparent;
+    --ion-toolbar-border-color: transparent;
+  }
+
+  div.text {
+    z-index: 1;
+
+    > p {
+      min-height: 46px;
+    }
+
+    @media screen and (min-width: 720px) {
+      width: 60%;
+      justify-self: center;
+    }
+  }
+
+  &.background-primary {
+    background: var(--ion-color-primary);
+  }
+
+  &.background-yellow {
+    background: var(--ion-color-background-yellow);
+  }
+
+  &.background-red {
+    background: var(--ion-color-background-red);
+  }
+
+  img.lady, img.organisation {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    max-width: inherit;
+  }
+
+  img.lady {
+    width: 150vw;
+    max-height: 50%;
+    transform: translate(-110vw, 0);
+  }
+
+  img.organisation {
+    width: 30rem;
+  }
+
+  img.logo {
+    width: 6rem;
+    height: 6rem;
+    max-height: 6rem;
+  }
+
+  img.by-bonjour {
+    width: auto;
+    height: 24px;
+    max-height: 24px;
+  }
+
+  &:first-of-type {
+    .grid {
+      grid-template-rows: 45% 55%;
+
+      @media screen and (min-height: 720px) {
+        grid-template-rows: 40% 60%;
+      }
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-rows: 30% 60% 10%;
+    grid-template-columns: 100%;
+    justify-content: center;
+    align-items: start;
+
+    width: 100%;
+    height: 100%;
+
+    div:last-of-type:not(.text) {
+      align-self: flex-start;
+    }
+
+    h1, img.logo {
+      margin-top: 4rem;
+
+      @media screen and (min-height: 720px) {
+        margin-top: 6rem;
+      }
+
+      &.first-title {
+        margin-top: 8px;
+      }
+    }
+  }
+
+  div.help, div.team, div.inquiry, div.info, div.organization, div.los-gehts {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    img, ion-label {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 24rem;
+    }
+
+    img {
+      top: 0;
+      max-height: calc(100% - 16px);
+    }
+
+    img.los-gehts-img {
+      transform: translate(-50%, 0);
+      width: 12rem;
+      z-index: 2;
+
+      @media screen and (max-height: 540px) {
+        display: none;
+      }
+
+      @media screen and (max-height: 640px) {
+        width: 8rem;
+      }
+    }
+
+    ion-label {
+      &.help-label, &.inquiry-label, &.info-label, &.organization-label {
+        width: 12rem;
+
+        @media screen and (max-height: 568px) {
+          font-size: 1rem;
+          line-height: inherit;
+        }
+      }
+
+      &.help-label {
+        top: 12rem;
+
+        @media screen and (min-height: 720px) {
+          top: 14rem;
+        }
+      }
+
+      &.inquiry-label {
+        top: 8rem;
+      }
+
+      &.info-label, &.organization-label {
+        top: 11.6rem;
+
+        @media screen and (min-height: 720px) {
+          top: 13.6rem;
+        }
+      }
+
+      z-index: 2;
+
+      color: black;
+      font-size: var(--status-font-size);
+      line-height: var(--status-line-height);
+      font-weight: var(--status-font-weight);
+    }
+  }
+
+  app-background-circle {
+    ion-label {
+      position: absolute;
+      top: 16%;
+      max-width: calc(100vw - 16px);
+    }
+  }
+}

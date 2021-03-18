@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-toolbar color="background">
+        <ion-buttons slot="start">
+            <ion-button (click)="close()">
+                <ion-icon slot="icon-only" name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-title></ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+    <h2 class="ion-text-center">{{ 'EMERGENCY.TITLE' | translate }}</h2>
+
+    <article>
+        <ion-list>
+            <ng-container *ngIf="(centerUser$ | async) as selectedUser;">
+                <ion-item-divider><ion-label class="ion-text-center ion-padding-top">{{ 'EMERGENCY.PHONE_NUMBER_CIRCLE' | translate }}</ion-label></ion-item-divider>
+
+                <ion-item>
+                    <ion-button [href]="'tel:' + selectedUser?.data?.phone_number"
+                                shape="round" size="large" color="light">
+                        <ion-icon slot="start" src="assets/img/button/emergency-call.svg"></ion-icon>
+                        <ion-label>{{ selectedUser?.data?.first_name | translate }}</ion-label>
+                    </ion-button>
+                </ion-item>
+
+                <ng-container *ngIf="circleConnections$">
+                    <ng-container *ngFor="let circleConnection of circleConnections$ | async; let i = index;">
+                        <ng-container *ngIf="circleConnection && circleConnection.data && circleConnection.data.user">
+                            <ion-item *ngIf="!isSessionUser(circleConnection.data.user.id) && circleConnection.data.first_name && circleConnection.data.phone_number">
+                                <ion-button [href]="'tel:' + circleConnection.data.phone_number"
+                                            [class.border-secondary]="i === 0"
+                                            [class.border-quinary]="i === 1"
+                                            [class.border-tertiary]="i === 2"
+                                            shape="round" size="large" color="light">
+                                    <ion-icon slot="start" src="assets/img/button/emergency-call.svg"></ion-icon>
+                                    <ion-label>{{ circleConnection.data.first_name | translate }}</ion-label>
+                                </ion-button>
+                            </ion-item>
+                        </ng-container>
+                    </ng-container>
+                </ng-container>
+            </ng-container>
+
+            <ng-container *ngIf="circle && circle.data && circle.data.emergency && circle.data.emergency.name && circle.data.emergency.phone_number">
+                <ion-item-divider><ion-label class="ion-text-center ion-padding-top">{{ 'EMERGENCY.EMERGENCY_NUMBER_CIRCLE' | translate }}</ion-label></ion-item-divider>
+
+                <ion-item>
+                    <ion-button [href]="'tel:' + circle.data.emergency.phone_number"
+                                shape="round" size="large" color="light" class="border-medium">
+                        <ion-icon slot="start" src="assets/img/button/emergency-call.svg"></ion-icon>
+                        <ion-label>{{ circle.data.emergency.name | translate }}</ion-label>
+                    </ion-button>
+                </ion-item>
+            </ng-container>
+        </ion-list>
+    </article>
+</ion-content>

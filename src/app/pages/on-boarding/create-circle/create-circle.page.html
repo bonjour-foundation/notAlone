@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="background">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <main>
+    <app-circle [small]="true" [highlightCenter]="true" [highlightTop]="true" [highlightRight]="true" [highlightLeft]="true"></app-circle>
+
+    <h2 class="ion-text-center ion-no-margin ion-padding-start ion-padding-end">{{ 'CREATE_CIRCLE.TITLE' | translate }}</h2>
+
+    <ol class="ion-text-center ion-padding-start ion-padding-end">
+      <li><ion-label>{{ 'CREATE_CIRCLE.STEPS.ONE' | translate }}</ion-label></li>
+      <li><ion-label>{{ 'CREATE_CIRCLE.STEPS.TWO' | translate }}</ion-label></li>
+      <li><ion-label>{{ 'CREATE_CIRCLE.STEPS.THREE' | translate }}</ion-label></li>
+    </ol>
+
+    <ion-label class="notifications ion-text-center" [innerHTML]="'CREATE_CIRCLE.NOTIFICATIONS' | translate"></ion-label>
+
+    <div class="ion-padding-start ion-padding-end ion-text-center">
+      <ion-button shape="round" size="large" type="submit" color="light" [routerLink]="['/signin', {centerUser: true}]">
+        <ion-label>{{ 'CREATE_CIRCLE.ME' | translate }}</ion-label>
+      </ion-button>
+
+      <p class="invited ion-text-center ion-padding-start ion-padding-end ion-padding-bottom ion-no-margin"><ion-label>{{ 'CREATE_CIRCLE.INVITED_TEXT' | translate }}</ion-label>&nbsp;<a (click)="navigateCreateUser()"><strong><ion-label>{{ 'CREATE_CIRCLE.INVITED_STRONG' | translate }}</ion-label></strong></a></p>
+    </div>
+  </main>
+
+</ion-content>

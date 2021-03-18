@@ -1,0 +1,21 @@
+<ion-app appRootTagLang>
+  <ion-menu contentId="main-content" type="overlay">
+    <ion-header>
+      <ion-toolbar color="background">
+        <ion-title></ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list class="ion-padding-start ion-padding-end">
+        <ion-menu-toggle auto-hide="false">
+          <app-circle-menu></app-circle-menu>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+    <ion-footer>
+      <app-circle-menu-footer></app-circle-menu-footer>
+    </ion-footer>
+  </ion-menu>
+
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-app>

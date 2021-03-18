@@ -1,0 +1,26 @@
+<ng-container *ngIf="(tipsStateVisible$ | async) as tipsStateVisible;">
+    <div class="smiley-info" [class.visible]="tipsStateVisible">
+    </div>
+
+    <div class="smiley-info smiley-info-text ion-text-center ion-padding" [class.visible]="tipsStateVisible">
+        {{ 'SMILEY.TIPS.STATE.START' | translate }} <mark>{{ 'SMILEY.TIPS.STATE.MARK' | translate }}</mark> {{ 'SMILEY.TIPS.STATE.END' | translate }}
+    </div>
+</ng-container>
+
+<ng-container *ngIf="(tipsCreateCircleVisible$ | async) as tipsCreateCircleVisible;">
+    <div class="smiley-info" [class.visible]="tipsCreateCircleVisible">
+    </div>
+
+    <div class="smiley-info smiley-info-text ion-text-center ion-padding" [class.visible]="tipsCreateCircleVisible">
+        {{ 'SMILEY.TIPS.CREATE_CIRCLE' | translate }}
+    </div>
+</ng-container>
+
+<ng-container *ngIf="(tipsEditCircleVisible$ | async) as tipsEditCircleVisible;">
+    <div class="smiley-info" [class.visible]="tipsEditCircleVisible">
+    </div>
+
+    <div class="smiley-info smiley-info-text ion-text-center ion-padding" [class.visible]="tipsEditCircleVisible">
+        {{ 'SMILEY.TIPS.EDIT_CIRCLE' | translate }}
+    </div>
+</ng-container>

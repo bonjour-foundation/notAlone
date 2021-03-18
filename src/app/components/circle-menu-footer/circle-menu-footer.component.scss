@@ -1,0 +1,14 @@
+img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: var(--ion-color-background);
+  transform: translate(-25%, 0);
+  width: calc(100% - 32px);
+}
+
+@media screen and (max-height: 667px) {
+  img {
+    display: none;
+  }
+}

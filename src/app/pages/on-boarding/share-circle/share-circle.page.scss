@@ -1,0 +1,16 @@
+main {
+  grid-template-rows: 13% 87%;
+  padding-top: 24px;
+}
+
+div.done {
+  padding-top: 0;
+}
+
+div.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
+}

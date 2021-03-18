@@ -1,0 +1,18 @@
+<svg id="Group_5255" data-name="Group 5255" xmlns="http://www.w3.org/2000/svg" width="26.057" height="26.057" viewBox="0 0 26.057 26.057">
+  <g id="Group_4080" data-name="Group 4080">
+    <circle id="Ellipse_1568" data-name="Ellipse 1568" cx="1" cy="1" r="1" transform="translate(12.485 21)" fill="#8f7c76"/>
+    <g id="Group_4079" data-name="Group 4079" transform="translate(0 19.98) rotate(-45)">
+      <g id="Path_4380" data-name="Path 4380" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4.389,0H28.256V8.592H4.389L0,4.327Z" stroke="none"/>
+        <path d="M 5.208852767944336 1.999998569488525 L 2.859062194824219 4.316780567169189 L 5.200469970703125 6.592358589172363 L 26.25635719299316 6.592358589172363 L 26.25635719299316 1.999998569488525 L 5.208852767944336 1.999998569488525 M 4.388698577880859 -1.9073486328125e-06 L 28.25635719299316 -1.9073486328125e-06 L 28.25635719299316 8.592358589172363 L 4.388698577880859 8.592358589172363 L -1.9073486328125e-06 4.327048301696777 L 4.388698577880859 -1.9073486328125e-06 Z" stroke="none" fill="#8f7c76"/>
+      </g>
+      <g id="Path_4642" data-name="Path 4642" transform="translate(15.821 0)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4.389,0h8.046V8.592H4.389Z" stroke="none"/>
+        <path d="M 6.38869571685791 1.999998569488525 L 6.38869571685791 6.592358589172363 L 10.43519592285156 6.592358589172363 L 10.43519592285156 1.999998569488525 L 6.38869571685791 1.999998569488525 M 4.38869571685791 -1.9073486328125e-06 L 12.43519592285156 -1.9073486328125e-06 L 12.43519592285156 8.592358589172363 L 4.38869571685791 8.592358589172363 L 4.38869571685791 -1.9073486328125e-06 Z" stroke="none" fill="#8f7c76"/>
+      </g>
+      <path id="Path_4643" data-name="Path 4643" d="M2.9,4.326,5.347,1.934,5.255,6.677Z" fill="none"/>
+    </g>
+    <circle id="Ellipse_1569" data-name="Ellipse 1569" cx="1" cy="1" r="1" transform="translate(16.485 21)" fill="#8f7c76"/>
+    <circle id="Ellipse_1570" data-name="Ellipse 1570" cx="1" cy="1" r="1" transform="translate(20.485 21)" fill="#8f7c76"/>
+  </g>
+</svg>

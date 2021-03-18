@@ -1,0 +1,41 @@
+<form (ngSubmit)="signup()" [formGroup]="userForm">
+  <section>
+    <h2 class="ion-text-center ion-padding ion-no-margin">{{ 'CREATE_EMAIL.TITLE' | translate }}</h2>
+
+    <ion-list class="ion-padding-start ion-padding-end">
+      <ion-item>
+        <ion-label position="floating">{{ 'EDIT_USER.EMAIL' | translate }}</ion-label>
+        <ion-input #email required formControlName="email" type="email"></ion-input>
+        <a (click)="focusEmail()" slot="end"><ion-icon src="assets/img/pencil.svg" ariaLabel="{{ 'EDIT_USER.EMAIL' | translate }}"></ion-icon></a>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">{{ 'EDIT_USER.PASSWORD' | translate }}</ion-label>
+        <ion-input #password required formControlName="password" type="password"></ion-input>
+        <a (click)="focusPassword()" slot="end"><ion-icon src="assets/img/pencil.svg" ariaLabel="{{ 'EDIT_USER.PASSWORD' | translate }}"></ion-icon></a>
+      </ion-item>
+
+      <ion-item *ngIf="newUser">
+        <ion-label position="floating">{{ 'EDIT_USER.CONFIRM_PASSWORD' | translate }}</ion-label>
+        <ion-input #confirmPassword required formControlName="confirmPassword" type="password"></ion-input>
+        <a (click)="focusConfirmPassword()" slot="end"><ion-icon src="assets/img/pencil.svg" ariaLabel="{{ 'EDIT_USER.CONFIRM_PASSWORD' | translate }}"></ion-icon></a>
+      </ion-item>
+    </ion-list>
+  </section>
+
+  <div class="actions ion-padding-start ion-padding-end ion-padding-bottom ion-margin-top ion-text-center">
+    <ion-button shape="round" size="large" type="submit" [disabled]="!userForm.valid" color="light">
+      <ion-label>{{ 'CORE.NEXT' | translate }}</ion-label>
+    </ion-button>
+
+    <p>
+      <a (click)="toggleForm()" *ngIf="newUser">{{ 'CREATE_EMAIL.SIGN_IN' | translate }}</a>
+      <a (click)="toggleForm()" *ngIf="!newUser">{{ 'CREATE_EMAIL.CREATE' | translate }}</a>
+    </p>
+
+    <p>
+      <a (click)="requestResetPassword()">{{ 'CREATE_EMAIL.PASSWORD' | translate }}</a>
+    </p>
+  </div>
+
+</form>

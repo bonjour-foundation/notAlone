@@ -1,0 +1,23 @@
+<div class="request-container">
+    <div class="request-label">
+        <ion-label class="request-label ion-text-center">{{getLabel()}}</ion-label>
+    </div>
+
+    <div class="request-selection">
+        <button class="ion-activatable ion-padding-start ion-padding-end" (click)="selectType(PHONE)" *ngIf="isCenterUser || displayRequestType === PHONE">
+            <ion-icon [src]="getIcon(PHONE)" ariaLabel="{{ 'REQUEST.PHONE_CALL' | translate }}"></ion-icon>
+        </button>
+
+        <button class="ion-activatable ion-padding-start ion-padding-end" (click)="selectType(SHOP)" *ngIf="isCenterUser || displayRequestType === SHOP">
+            <ion-icon [src]="getIcon(SHOP)" ariaLabel="{{ 'REQUEST.VISIT' | translate }}"></ion-icon>
+        </button>
+
+        <button class="ion-activatable ion-padding-start ion-padding-end" (click)="selectType(HAND)" *ngIf="isCenterUser || displayRequestType === HAND">
+            <ion-icon [src]="getIcon(HAND)" ariaLabel="{{ 'REQUEST.HELP' | translate }}"></ion-icon>
+        </button>
+
+        <button class="ion-activatable ion-padding-start ion-padding-end" (click)="selectType(GOOD)" *ngIf="isCenterUser || displayRequestType === GOOD">
+            <ion-icon [src]="getIcon(GOOD)" ariaLabel="{{ 'REQUEST.GOOD' | translate }}"></ion-icon>
+        </button>
+    </div>
+</div>

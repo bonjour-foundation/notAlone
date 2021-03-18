@@ -1,0 +1,67 @@
+ion-button[color="light"] {
+  --border-color: var(--ion-color-success);
+  --border-width: 2px;
+  --border-style: solid;
+  --border-radius: 16px;
+  --ripple-color: var(--ion-color-success);
+
+  width: 100%;
+  max-width: 350px;
+  padding: 0 16px;
+
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  line-height: var(--button-line-height);
+
+  outline: none;
+
+  &.border-intermediate {
+    --border-color: var(--ion-color-intermediate);
+  }
+
+  &.border-medium {
+    --border-color: var(--ion-color-medium);
+    --ripple-color: var(--ion-color-medium);
+  }
+
+  &.border-secondary {
+    --border-color: var(--ion-color-secondary);
+    --ripple-color: var(--ion-color-secondary);
+  }
+
+  &.border-tertiary {
+    --border-color: var(--ion-color-tertiary);
+    --ripple-color: var(--ion-color-tertiary);
+  }
+
+  &.border-quaternary {
+    --border-color: var(--ion-color-quaternary);
+    --ripple-color: var(--ion-color-quaternary);
+  }
+
+  &.border-quinary {
+    --border-color: var(--ion-color-quinary);
+    --ripple-color: var(--ion-color-quinary);
+  }
+}
+
+ion-fab-button[color="light"] {
+  --color: var(--ion-color-quaternary);
+  --border-color: var(--ion-color-quaternary);
+  --border-width: 2px;
+  --border-style: solid;
+  --ripple-color: var(--ion-color-quaternary);
+
+  ion-icon {
+    color: var(--ion-color-quaternary);
+  }
+}
+
+ion-buttons ion-back-button[class*="sc-ion-back-button"] {
+  color: var(--ion-color-medium);
+}
+
+*[custom-tappable] {
+  touch-action: manipulation;
+  cursor: pointer;
+}

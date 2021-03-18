@@ -1,0 +1,156 @@
+@import "../../../theme/media-queries";
+
+div.circle-container {
+  width: 100%;
+  height: 20rem;
+  position: relative;
+
+  ion-icon {
+    color: transparent;
+  }
+
+  ion-icon {
+    &.circle, &.center {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+    }
+
+    &.circle {
+      font-size: 14rem;
+    }
+
+    &.center {
+      font-size: 6rem;
+    }
+
+    &.top, &.right, &.left {
+      position: absolute;
+      transform: translate(-50%, -50%);
+    }
+
+    &.top {
+      top: 3.5rem;
+      left: 50%;
+    }
+
+    &.right, &.left {
+      top: 13.5rem;
+    }
+
+    &.right {
+      left: calc(50% + 5.75rem);
+    }
+
+    &.left {
+      left: calc(50% - 5.75rem);
+    }
+
+    &.top, &.right, &.left {
+      font-size: 4.5rem;
+    }
+  }
+
+  @include iphone4 {
+    height: 14rem;
+
+    ion-icon {
+      &.circle {
+        font-size: 10rem;
+      }
+
+      &.center {
+        font-size: 4rem;
+      }
+
+      &.top {
+        top: 2.5rem;
+      }
+
+      &.right, &.left {
+        top: 10.5rem;
+      }
+
+      &.right {
+        left: calc(50% + 3.75rem);
+      }
+
+      &.left {
+        left: calc(50% - 3.75rem);
+      }
+
+      &.top, &.right, &.left {
+        font-size: 3.5rem;
+      }
+    }
+  }
+
+  @include iphone5 {
+    height: 14rem;
+
+    ion-icon {
+      &.circle {
+        font-size: 10rem;
+      }
+
+      &.center {
+        font-size: 4rem;
+      }
+
+      &.top {
+        top: 2.5rem;
+      }
+
+      &.right, &.left {
+        top: 10.5rem;
+      }
+
+      &.right {
+        left: calc(50% + 3.75rem);
+      }
+
+      &.left {
+        left: calc(50% - 3.75rem);
+      }
+
+      &.top, &.right, &.left {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+div.circle-container.small {
+  height: 5rem;
+
+  ion-icon {
+    &.circle {
+      font-size: 4rem;
+    }
+
+    &.center {
+      font-size: 1.5rem;
+    }
+
+    &.top {
+      top: 0.6rem;
+    }
+
+    &.right, &.left {
+      top: 3.5rem;
+    }
+
+    &.right {
+      left: calc(50% + 1.6rem);
+    }
+
+    &.left {
+      left: calc(50% - 1.6rem);
+    }
+
+    &.top, &.right, &.left {
+      font-size: 1.2rem;
+    }
+  }
+}

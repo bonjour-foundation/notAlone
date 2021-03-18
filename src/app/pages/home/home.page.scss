@@ -1,0 +1,65 @@
+main {
+  grid-template-rows: 80% 20%;
+  align-items: center;
+
+  z-index: 11;
+
+  div.smiley-component-container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+  }
+
+  div.actions {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s linear, opacity 0.3s linear;
+
+    z-index: 4;
+
+    display: flex;
+    justify-content: center;
+
+    &.visible {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    ion-label.circle-informed {
+      font-size: var(--lead-font-size);
+      line-height: var(--lead-line-height);
+      font-weight: var(--lead-font-weight);
+
+      padding: 16px;
+
+      background-color: white;
+      border-radius: 8px;
+
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+
+      max-width: calc(100vw - 32px);
+    }
+
+    div.who-will-do-it {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      ion-icon {
+        color: var(--ion-color-success);
+        font-size: 4rem;
+        margin-right: 8px;
+      }
+
+      ion-label {
+        font-size: var(--lead-font-size);
+        line-height: var(--lead-line-height);
+        font-weight: var(--lead-font-weight);
+      }
+    }
+  }
+}
+
+app-background-circle {
+  --background-circle: var(--ion-color-intermediate);
+}

@@ -1,0 +1,11 @@
+<section [class.no-skip]="noSkip || lastSlide" [class.transparent]="transparent">
+    <button *ngIf="!noSkip && !lastSlide" (click)="skip.emit()" [attr.aria-label]="'INTRO.SKIP_INTRO' | translate" class="skip">
+        <ion-icon name="close-outline" role="presentation"></ion-icon>
+        <ion-label class="ion-padding-start ion-padding-end">{{ 'INTRO.SKIP_INTRO' | translate }}</ion-label>
+    </button>
+
+    <button (click)="next.emit()" [attr.aria-label]="'CORE.NEXT' | translate" class="next">
+        <ion-label class="ion-padding-start ion-padding-end">{{ 'CORE.NEXT' | translate }}</ion-label>
+        <ion-icon name="chevron-forward-outline" role="presentation"></ion-icon>
+    </button>
+</section>

@@ -1,0 +1,12 @@
+a, button {
+  color: inherit;
+  touch-action: manipulation;
+  cursor: pointer;
+
+  &.underline {
+    ion-label {
+      text-decoration: underline;
+      text-underline-position: under;
+    }
+  }
+}

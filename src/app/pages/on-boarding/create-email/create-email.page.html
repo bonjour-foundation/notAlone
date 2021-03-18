@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="background">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <main>
+    <app-circle [small]="true" [highlightCenter]="centerUser" [highlightTop]="!centerUser" [highlightRight]="!centerUser" [highlightLeft]="!centerUser"></app-circle>
+
+    <app-create-email (userCreated)="navigateCreateUser()" (signedIn)="navigateHome()" (resetPassword)="navigateResetPassword()"></app-create-email>
+  </main>
+
+</ion-content>

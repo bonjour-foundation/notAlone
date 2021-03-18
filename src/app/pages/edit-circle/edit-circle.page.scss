@@ -1,0 +1,70 @@
+@import "../../../theme/media-queries";
+
+main {
+  grid-template-rows: 25% 75%;
+  height: inherit;
+  min-height: 100%;
+
+  @include iphone4 {
+    grid-template-rows: auto;
+  }
+
+  @include iphone5 {
+    grid-template-rows: auto;
+  }
+
+  @include ipad {
+    min-height: 640px;
+  }
+
+  app-edit-user {
+    display: none;
+
+    &.show {
+      display: inherit;
+    }
+  }
+
+  div.share {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 80% 20%;
+  }
+
+  div.select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      background: none;
+      outline: none;
+      cursor: pointer;
+
+      position: relative;
+
+      opacity: 0.4;
+
+      @media screen and (max-width: 540px) {
+        padding: 2px;
+      }
+
+      &.selected {
+        opacity: 1;
+      }
+
+      ion-icon {
+        font-size: 3rem;
+        padding: 8px;
+        color: transparent;
+      }
+    }
+  }
+
+}
+
+@media screen and (max-height: 560px) {
+  app-circle {
+    display: none;
+  }
+}

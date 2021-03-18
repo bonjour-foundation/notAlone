@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar color="background">
+      <ion-buttons slot="start" *ngIf="canGoBackLoaded">
+          <ion-back-button *ngIf="canGoBack"></ion-back-button>
+          <ion-menu-button *ngIf="!canGoBack"></ion-menu-button>
+      </ion-buttons>
+
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+    <ng-container *ngIf="(centerUser$ | async) as selectedUser; else userNotLoaded;">
+        <main>
+            <div>
+                <app-circle [small]="true" [highlightCenter]="showUserPosition === 0" [highlightTop]="showUserPosition === 1" [highlightRight]="showUserPosition === 2" [highlightLeft]="showUserPosition === 3"></app-circle>
+
+                <div class="select ion-margin-top">
+                    <button class="ion-activatable" (click)="selectCenterUser()" [class.selected]="showUserPosition === 0">
+                        <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+                        <ion-icon src="assets/img/circle/center-small.svg"></ion-icon>
+                    </button>
+
+                    <button class="ion-activatable" (click)="selectConnectedUser(0)" [class.selected]="showUserPosition === 1">
+                        <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+                        <ion-icon [src]="'assets/img/circle/top.svg'"></ion-icon>
+                    </button>
+
+                    <button class="ion-activatable" (click)="selectConnectedUser(1)" [class.selected]="showUserPosition === 2">
+                        <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+                        <ion-icon [src]="'assets/img/circle/right.svg'"></ion-icon>
+                    </button>
+
+                    <button class="ion-activatable" (click)="selectConnectedUser(2)" [class.selected]="showUserPosition === 3">
+                        <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+                        <ion-icon [src]="'assets/img/circle/left.svg'"></ion-icon>
+                    </button>
+
+<!--                    <button class="ion-activatable" (click)="selectEmergency()" [class.selected]="showUserPosition === 4">-->
+<!--                        <ion-ripple-effect type="unbounded"></ion-ripple-effect>-->
+<!--                        <ion-icon src="assets/img/button/key.svg"></ion-icon>-->
+<!--                    </button>-->
+                </div>
+            </div>
+
+            <ng-container *ngIf="selected === SELECTED_USER">
+                <ng-container *ngIf="!selectedUserEmpty">
+                    <app-edit-user [user]="selectedUser" [centerUser]="true" [circle]="circle" [class.show]="showUserPosition === 0"></app-edit-user>
+
+                    <ng-container *ngFor="let connected of connectedUsers; let i = index;">
+                        <ng-container *ngIf="(connected?.user$ | async) as connectionUser">
+                            <app-edit-user [user]="connectionUser" [centerUser]="false" [circle]="circle" [class.show]="showUserPosition === i + 1"></app-edit-user>
+                        </ng-container>
+                    </ng-container>
+
+                </ng-container>
+
+                <ng-container *ngIf="selectedUserEmpty">
+                    <div class="share ion-padding-start ion-padding-end">
+                        <app-share-display [shareId]="shareId">
+                            <p class="ion-text-center">{{ 'EDIT_CIRCLE.NO_ONE_INVITED' | translate }}</p>
+                        </app-share-display>
+
+                        <div class="ion-padding-bottom ion-text-center">
+                            <app-share (createShare)="createShare()"></app-share>
+                        </div>
+                    </div>
+                </ng-container>
+            </ng-container>
+
+<!--            <ng-container *ngIf="selected === SELECTED_EMERGENCY">-->
+<!--                <app-edit-emergency [circle]="circle"></app-edit-emergency>-->
+<!--            </ng-container>-->
+        </main>
+    </ng-container>
+
+    <ng-template #userNotLoaded>
+        <main>
+            <ion-spinner color="primary"></ion-spinner>
+        </main>
+    </ng-template>
+
+</ion-content>

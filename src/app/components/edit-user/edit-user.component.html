@@ -1,0 +1,29 @@
+<form (ngSubmit)="createOrUpdate()" [formGroup]="userForm">
+
+  <ion-list class="ion-padding-start ion-padding-end">
+    <ion-item>
+      <ion-label position="floating">{{ 'EDIT_USER.FIRST_NAME' | translate }}</ion-label>
+      <ion-input #firstName required [value]="user?.data?.first_name" formControlName="first_name" type="text"></ion-input>
+      <a (click)="focusFirstName()" slot="end"><ion-icon src="assets/img/pencil.svg" ariaLabel="{{ 'EDIT_USER.FIRST_NAME' | translate }}"></ion-icon></a>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">{{ 'EDIT_USER.NAME' | translate }}</ion-label>
+      <ion-input #lastName required [value]="user?.data?.last_name" formControlName="last_name" type="text"></ion-input>
+      <a (click)="focusLastName()" slot="end"><ion-icon src="assets/img/pencil.svg" ariaLabel="{{ 'EDIT_USER.NAME' | translate }}"></ion-icon></a>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">{{ 'EDIT_USER.PHONE' | translate }}</ion-label>
+      <ion-input #phoneNumber required [value]="user?.data?.phone_number" formControlName="phone_number" type="tel"></ion-input>
+      <a (click)="focusPhoneNumber()" slot="end"><ion-icon src="assets/img/pencil.svg" ariaLabel="{{ 'EDIT_USER.PHONE' | translate }}"></ion-icon></a>
+    </ion-item>
+  </ion-list>
+
+  <div class="actions ion-padding-start ion-padding-end ion-text-center">
+    <ion-button shape="round" size="large" type="submit" [disabled]="!userForm.valid" color="light">
+      <ion-label>{{ 'CORE.SAVE' | translate }}</ion-label>
+    </ion-button>
+  </div>
+
+</form>

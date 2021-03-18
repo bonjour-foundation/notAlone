@@ -1,0 +1,86 @@
+<ng-container *ngIf="emergency && !loading">
+    <div class="smiley-container emergency" *ngIf="!displayState || !displayState.emergency || !isTodayState()">
+
+        <ion-label class="ion-text-center smiley-icon-text">
+            {{ 'SMILEY.EMERGENCY' | translate:{who: centerUser && centerUser.data ? centerUser.data.first_name : ''} }}
+        </ion-label>
+
+        <div class="smiley-icon-container">
+            <img [src]="'assets/img/smiley/emergency.svg'" alt="{{ 'SMILEY.EMERGENCY' | translate:{who: centerUser && centerUser.data ? centerUser.data.first_name : ''} }}"/>
+        </div>
+
+        <div class="smiley-circle"></div>
+    </div>
+
+    <div class="smiley-container emergency-checked" *ngIf="displayState && displayState.emergency && isTodayState()">
+
+        <ion-label class="ion-text-center smiley-icon-text">
+            {{ 'SMILEY.EMERGENCY_CHECKED' | translate:{who: centerUser && centerUser.data ? centerUser.data.first_name : ''} }}
+        </ion-label>
+
+        <div class="smiley-icon-container">
+            <img [src]="'assets/img/smiley/emergency-checked.svg'" alt="{{ 'SMILEY.EMERGENCY_CHECKED' | translate:{who: centerUser && centerUser.data ? centerUser.data.first_name : ''} }}"/>
+        </div>
+
+        <div class="smiley-circle"></div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="!emergency && !loading">
+    <div class="smiley-container" [ngClass]="smileys[smileyIndex].style" [class.tips-visible]="tipsCreateCircleVisible || tipsEditCircleVisible">
+
+        <ion-label class="ion-text-center smiley-icon-text" custom-tappable (click)="nextSmiley()" role="button">
+            {{ smileys[smileyIndex].label | translate }}
+        </ion-label>
+
+        <div *ngIf="smileys[smileyIndex].type !== 0 && hasState() && !isCenterUser" class="ion-text-center smiley-state">
+            <ion-label class="ion-text-center">
+                {{ displayState.created_at | formatDate}}
+            </ion-label>
+        </div>
+
+        <div *ngIf="smileys[smileyIndex].type !== 0 && hasState() && isCenterUser && circleReminder && isCircleNextReminderFuture()" class="ion-text-center smiley-state">
+            <ion-label class="ion-text-center">
+                {{ 'SMILEY.NEXT.TEXT' | translate:{at: getCircleNextReminder()} }}
+            </ion-label>
+
+            <button (click)="navigateReminder()" class="underline"><ion-label class="ion-text-center">{{ 'SMILEY.NEXT.LINK' | translate }}</ion-label></button>
+        </div>
+
+        <ng-container *ngIf="tipsCreateCircleVisible">
+            <div class="smiley-icon-container">
+                <a><img [src]="smileys[smileyIndex].iconInactive" alt="{{ smileys[smileyIndex].label | translate }}"/></a>
+            </div>
+
+            <ion-icon src="assets/img/smiley/outer-circle-highlight.svg" class="smiley-circle smiley-circle-hover" custom-tappable (click)="emitCreateCircle()"></ion-icon>
+        </ng-container>
+
+        <ng-container *ngIf="tipsEditCircleVisible">
+            <div class="smiley-icon-container">
+                <a><img [src]="smileys[smileyIndex].iconInactive" alt="{{ smileys[smileyIndex].label | translate }}"/></a>
+            </div>
+
+            <ion-icon src="assets/img/smiley/outer-circle-highlight.svg" class="smiley-circle smiley-circle-hover" custom-tappable (click)="emitEditCircle()"></ion-icon>
+        </ng-container>
+
+        <ng-container *ngIf="!tipsCreateCircleVisible && !tipsEditCircleVisible">
+            <div class="smiley-icon-container">
+                <a (click)="nextSmiley()"><img [src]="smileys[smileyIndex].icon" alt="{{ smileys[smileyIndex].label | translate }}"/></a>
+            </div>
+
+            <ion-icon *ngIf="hasCenterUser()" src="assets/img/smiley/outer-circle.svg" class="smiley-circle" custom-tappable (click)="emitEditCircle()"></ion-icon>
+        </ng-container>
+    </div>
+
+    <app-request [displayRequest]="displayRequest" [centerUser]="centerUser" [isCenterUser]="isCenterUser" [displayState]="displayState" (select)="selectRequestType($event)"></app-request>
+</ng-container>
+
+<ng-container *ngIf="loading">
+    <div class="smiley-container">
+        <div class="smiley-loading">
+            <ion-spinner color="dark"></ion-spinner>
+        </div>
+    </div>
+
+    <app-request></app-request>
+</ng-container>

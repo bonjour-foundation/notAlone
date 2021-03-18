@@ -1,0 +1,11 @@
+<ion-content class="ion-padding">
+
+    <main>
+        <app-circle [small]="true" [highlightCenter]="centerUser" [highlightTop]="!centerUser" [highlightRight]="!centerUser" [highlightLeft]="!centerUser"></app-circle>
+
+        <ng-container *ngIf="loaded">
+            <app-create-user [centerUser]="centerUser" [firstName]="firstName" [lastName]="lastName" [email]="email" (saved)="navigate()"></app-create-user>
+        </ng-container>
+    </main>
+
+</ion-content>

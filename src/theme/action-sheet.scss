@@ -1,0 +1,11 @@
+ion-action-sheet[class*="sc-ion-action-sheet"] {
+  --button-color: black;
+
+  button.action-sheet-destructive {
+    font-weight: 700;
+  }
+
+  button.action-sheet-cancel[class*="sc-ion-action-sheet"] {
+    font-weight: normal;
+  }
+}

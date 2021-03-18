@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="background">
+    <ion-buttons slot="start" *ngIf="canGoBackLoaded">
+      <ion-back-button *ngIf="canGoBack"></ion-back-button>
+      <ion-menu-button *ngIf="!canGoBack"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <main>
+    <div class="title">
+      <ion-icon src="assets/img/menu/schedule.svg" ariaLabel="{{ 'MENU.SCHEDULE' | translate }}"></ion-icon>
+      <h2>{{ 'MENU.SCHEDULE' | translate }}</h2>
+    </div>
+
+    <ion-list class="ion-padding-start ion-padding-end">
+      <ion-item>
+        <ion-label position="floating">{{ 'SCHEDULE.NEXT_DAY' | translate }}</ion-label>
+        <ion-datetime #day displayFormat="D MMMM YYYY"
+                      [value]="nextReminder ? nextReminder.toISOString() : null" [min]="minDate ? minDate.toISOString() : null" [max]="maxDate ? maxDate.toISOString() : null"
+                      (ionChange)="onChangeReminderAt($event)"
+                      monthNames="{{'SCHEDULE.MONTHS' | translate}}"
+                      cancelText="{{'CORE.CANCEL' | translate}}" doneText="{{'CORE.OK' | translate}}"></ion-datetime>
+        <a (click)="openDay()" slot="end"><ion-icon src="assets/img/pencil.svg" ariaLabel="{{ 'SCHEDULE.NEXT_DAY' | translate }}"></ion-icon></a>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">{{ 'SCHEDULE.NEXT_TIME' | translate }}</ion-label>
+        <ion-datetime #time displayFormat="HH:mm" minuteValues="0,15,30,45"
+                      [value]="nextReminder ? nextReminder.toISOString() : null"
+                      (ionChange)="onChangeReminderAt($event)"
+                      cancelText="{{'CORE.CANCEL' | translate}}" doneText="{{'CORE.OK' | translate}}"></ion-datetime>
+        <a (click)="openTime()" slot="end"><ion-icon src="assets/img/pencil.svg" ariaLabel="{{ 'SCHEDULE.NEXT_TIME' | translate }}"></ion-icon></a>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding-start ion-padding-end ion-margin-bottom ion-text-center actions">
+      <ion-button shape="round" size="large" color="light" (click)="save()">
+        <ion-label>{{ 'CORE.SAVE' | translate }}</ion-label>
+      </ion-button>
+    </div>
+  </main>
+
+</ion-content>

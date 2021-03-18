@@ -1,0 +1,31 @@
+main {
+
+  div.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    ion-icon {
+      color: transparent;
+      font-size: 4rem;
+    }
+  }
+
+  div.actions-logout-delete {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  ion-spinner {
+    visibility: hidden;
+    opacity: 0;
+
+    &.show {
+      visibility: inherit;
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+<ion-item button [routerDirection]="'root'" [routerLink]="'/home'">
+    <ion-icon slot="start" src="assets/img/menu/home.svg" role="presentation"></ion-icon>
+    <ion-label>
+        {{ 'MENU.HOME' | translate }}
+    </ion-label>
+</ion-item>
+
+<ion-item button [routerDirection]="'root'" [routerLink]="'/edit-circle'" *ngIf="!editHidden">
+    <ion-icon slot="start" src="assets/img/menu/my-circle.svg" role="presentation"></ion-icon>
+    <ion-label>
+        {{ 'MENU.EDIT_CIRCLE' | translate }}
+    </ion-label>
+</ion-item>
+
+<ion-item button [routerDirection]="'root'" [routerLink]="'/schedule'" *ngIf="!userOptionsHidden">
+    <ion-icon slot="start" src="assets/img/menu/schedule.svg" role="presentation"></ion-icon>
+    <ion-label>
+        {{ 'MENU.SCHEDULE' | translate }}
+    </ion-label>
+</ion-item>
+
+<ion-item button [routerDirection]="'root'" [routerLink]="'/account'" *ngIf="!accountHidden">
+    <ion-icon slot="start" src="assets/img/menu/account.svg" role="presentation"></ion-icon>
+    <ion-label>
+        {{ 'MENU.ACCOUNT' | translate }}
+    </ion-label>
+</ion-item>
+
+<ion-item button (click)="openAbout()">
+    <ion-icon slot="start" src="assets/img/menu/information.svg" role="presentation"></ion-icon>
+    <ion-label>
+        {{ 'MENU.INFORMATION' | translate }}
+    </ion-label>
+</ion-item>
+
+<ion-item button (click)="openPrivacy()">
+    <ion-icon slot="start" src="assets/img/menu/privacy.svg" role="presentation"></ion-icon>
+    <ion-label>
+        {{ 'MENU.PRIVACY' | translate }}
+    </ion-label>
+</ion-item>
+
+<ion-item button (click)="openAboutBonjour()">
+    <ion-icon slot="start" src="assets/img/menu/bonjour.svg" role="presentation"></ion-icon>
+    <ion-label>
+        {{ 'MENU.ABOUT_BONJOUR' | translate }}
+    </ion-label>
+</ion-item>

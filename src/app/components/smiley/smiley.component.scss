@@ -1,0 +1,251 @@
+@import "../../../theme/media-queries";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+div.smiley-container {
+  position: relative;
+
+  width: 36rem;
+  height: 36rem;
+
+  max-width: calc(100vw - 32px);
+
+  ion-icon.smiley-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 28rem;
+
+    &.smiley-circle-hover {
+      z-index: 11;
+    }
+  }
+
+  ion-icon.smiley-circle, ion-label.smiley-icon-text, div.smiley-state {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s linear,opacity 1s linear;
+  }
+
+  div.smiley-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  div.smiley-icon-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    z-index: 11;
+
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ion-label.smiley-icon-text, div.smiley-state {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    z-index: 3;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+
+  ion-label.smiley-icon-text {
+    transform: translate(-50%, -10rem);
+
+    font-size: var(--subtitles-font-size);
+    font-weight: var(--subtitles-font-weight);
+    line-height: var(--subtitles-line-height);
+  }
+
+  div.smiley-state {
+    transform: translate(-50%, 7rem);
+
+    font-size: var(--text-font-size);
+    font-weight: var(--text-font-weight);
+    line-height: var(--text-line-height);
+
+    color: var(--ion-color-medium);
+
+    @media screen and (max-height: 568px) {
+      display: none;
+    }
+
+    button {
+      padding: 0 0 4px 0;
+      border: none;
+      outline: none;
+      font: inherit;
+      color: inherit;
+      background: none
+    }
+  }
+
+  img {
+    color: transparent;
+
+    width: 15rem;
+    height: 15rem;
+  }
+
+  &.super {
+    ion-label.smiley-icon-text {
+      color: var(--ion-color-success);
+    }
+  }
+
+  &.well {
+    ion-label.smiley-icon-text {
+      color: var(--ion-color-well);
+    }
+  }
+
+  &.okay {
+    ion-label.smiley-icon-text {
+      color: var(--ion-color-okay);
+    }
+  }
+
+  &.not-well {
+    ion-label.smiley-icon-text {
+      color: var(--ion-color-not-well);
+    }
+  }
+
+  &.bad {
+    ion-label.smiley-icon-text {
+      color: var(--ion-color-bad);
+    }
+  }
+
+  &.tips-visible {
+    &.super, &.well, &.okay, &.not-well, &.bad {
+      ion-label.smiley-icon-text {
+        color: var(--ion-color-medium);
+      }
+    }
+  }
+
+  &.emergency {
+    ion-label.smiley-icon-text {
+      color: var(--ion-color-emergency);
+    }
+  }
+
+  &.emergency-checked {
+    ion-label.smiley-icon-text {
+      color: var(--ion-color-success);
+    }
+  }
+
+  &.question {
+    ion-label.smiley-icon-text {
+      max-width: 9rem;
+    }
+
+    ion-label.smiley-icon-text, div.smiley-state {
+      font-size: var(--lead-font-size);
+      line-height: var(--lead-line-height);
+      transform: translate(-50%, -50%);
+      z-index: 12;
+    }
+  }
+
+  &.question {
+    ion-label.smiley-icon-text {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &:not(.question) {
+    ion-icon.smiley-circle, ion-label.smiley-icon-text, div.smiley-state {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+@include iphone4 {
+  div.smiley-container {
+    ion-icon.smiley-circle {
+      font-size: 22rem;
+    }
+
+    ion-label.smiley-icon-text {
+      transform: translate(-50%, -8.5rem);
+    }
+  }
+}
+
+@include iphone5 {
+  div.smiley-container {
+    ion-icon.smiley-circle {
+      font-size: 22rem;
+    }
+
+    ion-label.smiley-icon-text {
+      transform: translate(-50%, -8.5rem);
+    }
+  }
+}
+
+@media screen and (max-height: 440px) {
+  app-request.visible {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-height: 540px) {
+  div.smiley-container {
+    ion-icon.smiley-circle {
+      font-size: 16rem;
+    }
+
+    ion-label.smiley-icon-text {
+      transform: translate(-50%, -6.5rem);
+    }
+
+    div.smiley-state {
+      transform: translate(-50%, 5rem);
+    }
+  }
+}
+
+@media screen and (min-height: 540px) and (max-height: 640px) {
+  div.smiley-container {
+    ion-icon.smiley-circle {
+      font-size: 22rem;
+    }
+
+    ion-label.smiley-icon-text {
+      transform: translate(-50%, -8.5rem);
+    }
+  }
+}

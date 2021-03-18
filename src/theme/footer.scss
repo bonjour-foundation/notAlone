@@ -1,0 +1,30 @@
+ion-footer {
+  ion-toolbar {
+    --border-color: transparent;
+
+    &[color="background-footer"] {
+      ion-tab-button {
+        --background: var(--ion-background-footer);
+        --color: var(--ion-color-medium);
+
+        ion-icon {
+          color: transparent;
+        }
+
+        ion-label {
+          margin-top: 2px;
+        }
+
+        &.tab-disabled {
+          ion-label {
+            opacity: 0.4;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer-md:before {
+  background: none;
+}
